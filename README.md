@@ -45,6 +45,7 @@ Supported devices: FM403C
  загрузки и монтирования NFS, записи в SPI.
 
     Структура каталогов
+ \
  .
  ├── board
  │   ├── Config.in
@@ -90,4 +91,5 @@ Supported devices: FM403C
  │           ├── gipcy.mk
  │           └── S51ipcdrv
  └── README.md
+ \
 
