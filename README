@@ -1,4 +1,3 @@
-# project
 
 Embedded linux framework for DM8168 modules based on buildroot.
 
@@ -55,9 +54,9 @@ Supported devices: FM403C
  │   ├── insys
  │   │   ├── common
  │   │   │   ├── arago-env.sh
- │   │   │   ├── build-bardy.sh            - скрипт для сборки BARDY (шаг 1, перед созданием rootfs)
+ │   │   │   ├── build-bardy.sh            - скрипт для сборки BARDY (шаг 1, перед rootfs)
  │   │   │   ├── busybox.config            - конфигурация busysbox 
- │   │   │   ├── mkfs.sh                   - скрипт для подготовки rootfs (шаг 2, перед созданием rootfs)
+ │   │   │   ├── mkfs.sh                   - скрипт для подготовки rootfs (шаг 2, перед rootfs)
  │   │   │   ├── patches
  │   │   │   │   └── 0001-inisys.patch     - патч для ядра Linux (arago project)
  │   │   │   └── rootfs_overlay            - оверлей файловой системы для target
@@ -81,7 +80,7 @@ Supported devices: FM403C
  │   │   │                   └── exam_pio.ini
  │   │   └── fm403c
  │   │       └── linux.config              - конфигурация ядра linux для FM403C
- │   └── package                           - каталог с дополнительными пакетами для buildroot (не тестировалось)
+ │   └── package                           - каталог с пакетами для buildroot (не тестировалось)
  │       ├── bardy
  │       │   ├── bardy.mk
  │       │   └── Config.in
@@ -90,5 +89,3 @@ Supported devices: FM403C
  │           ├── gipcy.mk
  │           └── S51ipcdrv
  └── README.md
- \
-
