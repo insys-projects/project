@@ -1,0 +1,10 @@
+config BR2_PACKAGE_GIPCY
+	bool "gipcy"
+	help
+	  gipcy is a tiny IPC library for controlling of shared
+	  resource usage. It is need a kernel module ipcdrv, that
+	  included in library source code.
+
+	  https://github.com/karakozov/gipcy
+
+comment "Provide for controlling of shared resources using."

@@ -1,0 +1,3 @@
+
+source "$BR2_EXTERNAL_INSYS_DM8168_PATH/package/gipcy/Config.in"
+source "$BR2_EXTERNAL_INSYS_DM8168_PATH/package/bardy/Config.in"

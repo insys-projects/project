@@ -1,0 +1,9 @@
+config BR2_PACKAGE_BARDY
+	bool "bardy"
+	depends on BR2_PACKAGE_GIPCY
+	help
+	  bardy is a software library framwork for InSys hardware.
+
+	  https://insys.ru
+
+comment "Provide for controlling of hardware."

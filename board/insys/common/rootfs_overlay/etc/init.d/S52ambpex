@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# load ambpex
+#
+
+# Make sure the ambpex.ko exists
+[ -f /home/embedded/drivers/ambpex.ko ] || exit 0
+
+mname=ambpex
+device=ambpex
+mode="666"
+
+mknodes() {
+	str=`cat /proc/devices | grep $mname`
+	major=`expr match "$str" '\([0-9]*\)'`
+	echo Driver ${module} was loaded. Major number: ${major}.
+	mknod /dev/${device}0 c ${major} 0
+	chmod -v ${mode} /dev/${device}0
+}
+start() {
+	printf "Starting ambpex: "
+	/sbin/insmod /home/embedded/drivers/ambpex.ko dbg_trace=1 err_trace=1 || exit 1
+	echo "OK"
+	mknodes
+}
+stop() {
+	printf "Stopping ambpex: "
+	/sbin/rmmod ambpex
+	echo "OK"
+}
+restart() {
+	stop
+	start
+}
+
+case "$1" in
+  start)
+	start
+	;;
+  stop)
+	stop
+	;;
+  restart|reload)
+	restart
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
