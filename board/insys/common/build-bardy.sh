@@ -21,8 +21,9 @@ source ./BardyEnv.sh
 
 echo "====  Ok   ===="
 
+make clean
 make
 
 echo "================================================"
-echo "Build BARDY for ${BOARD} complete"
+echo "  Build BARDY for ${BOARD} complete"
 echo "================================================"
