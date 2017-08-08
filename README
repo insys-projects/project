@@ -14,8 +14,9 @@ Supported devices: FM403C
     cd ~/project
     git clone git://git.buildroot.net/buildroot
 
-3. Создадим каталог для сборки проекта для моудля FM403C
+3. Создадим каталог для загрузки компонент и сборки проекта для моудля FM403C
 
+    mkdir downloads
     mkdir fm403c
     cd ./fm403c
 
