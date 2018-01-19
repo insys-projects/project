@@ -33,8 +33,8 @@ else
         unset SCRIPT_LOC_TMP_UNI
 fi
 
-export TOOLS_DIR=`readlink -f "${SCRIPT_LOC}"`
-
+#export TOOLS_DIR=`readlink -f "${SCRIPT_LOC}"`
+export TOOLS_DIR=${HOME}/project.git/fm403c
 export TOOLCHAIN_PATH=${TOOLS_DIR}/host/opt/ext-toolchain/bin
 export TARGET_SYS=arm-arago-linux-gnueabi
 export CC=${TARGET_SYS}-gcc
@@ -59,6 +59,6 @@ export CSTOOL_DIR=${TOOLCHAIN_PATH}
 export CSTOOL_PREFIX=${TARGET_SYS}-
 export INSTALL_PREFIX=${HOME}/targetfs-${BOARD}
 export TARGETFS_USER=embedded
-export BUILD_DIR=${TOOLS_DIR}/build
+#export BUILD_DIR=${TOOLS_DIR}/build
 
 export PS1="\[\e[32;1m\][arago-${BOARD}]\[\e[0m\]:\w> "
