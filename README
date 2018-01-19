@@ -35,8 +35,9 @@ Supported devices: FM403C
     cd ~
     tar -xzvf bardy.tgz
 
-6. Выполняем сборку
+6. Выполняем сборку образа файловой системы
 
+    cd ~/project/fm403c
     make
 
  После сборки в каталоге ./fm403c/images будут файлы
