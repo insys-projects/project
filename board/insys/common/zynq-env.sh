@@ -1,14 +1,14 @@
 #!/bin/sh
 
 #echo "================================================"
-#echo " ARAGO ENV ARGS:"
+#echo " ZYNQ ENV ARGS:"
 #echo " ARG0 = $0"
 #echo " ARG1 = $1"
 #echo " ARG2 = $2"
 #echo " ARGS = $#"
 #echo "================================================"
 
-SETTINGS_FILE='arago-env.sh'
+SETTINGS_FILE='zynq-env.sh'
 SCRIPT_LOC="./"
 
 if [ $# != 0 ]; then
@@ -33,7 +33,8 @@ else
         unset SCRIPT_LOC_TMP_UNI
 fi
 
-export TOOLS_DIR=`readlink -f "${SCRIPT_LOC}"`
+TD=`readlink -f "${SCRIPT_LOC}"`
+export TOOLS_DIR=`dirname ${TD}`
 export TOOLCHAIN_PATH=${TOOLS_DIR}/../../../${BOARD}/host/opt/ext-toolchain/bin
 
 echo ${TOOLS_DIR}
@@ -41,7 +42,7 @@ echo ${TOOLCHAIN_PATH}
 
 #export TOOLS_DIR=${HOME}/project.git/fm403c
 #export TOOLCHAIN_PATH=${TOOLS_DIR}/host/opt/ext-toolchain/bin
-export TARGET_SYS=arm-arago-linux-gnueabi
+export TARGET_SYS=arm-none-linux-gnueabihf
 export CC=${TARGET_SYS}-gcc
 export CPP="${TARGET_SYS}-gcc"
 export CXX="${TARGET_SYS}-gcc"
@@ -58,7 +59,7 @@ export PATH=${HOME}/embedded/common:${PATH}
 export PATH=${TOOLCHAIN_PATH}:${PATH}
 export CROSS_COMPILE=${TARGET_SYS}-
 export ARCH=arm
-export KERNELDIR=${TOOLS_DIR}/../../../${BOARD}/build/linux-master
+export KERNELDIR=${TOOLS_DIR}/../../../${BOARD}/build/linux-xilinx-v2020.1
 export INSTALL_MOD_PATH=${HOME}/targetfs-${BOARD}
 export CSTOOL_DIR=${TOOLCHAIN_PATH}
 export CSTOOL_PREFIX=${TARGET_SYS}-

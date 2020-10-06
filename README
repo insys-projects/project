@@ -97,3 +97,17 @@ Supported devices: FM403C
  │           ├── gipcy.mk
  │           └── S51ipcdrv
  └── README.md
+
+7. Для модулей на базе Zynq 7000
+
+    cd ~/project
+    mkdir fmc130e
+    cd fmc130e
+    make BR2_EXTERNAL=../board -C ../buildroot O=$PWD fmc130e_defconfig
+    make menuconfig
+    make
+
+    Для настройки кросскомпилятора:
+    cd ~/project/board/insys/common
+    source ./zynq_env.sh
+
